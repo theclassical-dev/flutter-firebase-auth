@@ -8,6 +8,10 @@ class AuthenticationService {
   // firebase state changes
   Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
   
+  // logout
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
+  }
   // methods
   Future<dynamic> signIn(
       {required String email, required String password}) async {
